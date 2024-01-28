@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,8 +12,6 @@ public class GameClear : MonoBehaviour
     [SerializeField] Text p2;
     [SerializeField]
     private string winnerName;
-
-    [SerializeField] private SlowMotion SlowMotion;
 
     private bool isGameClear;
 
@@ -30,9 +29,8 @@ public class GameClear : MonoBehaviour
     private void Update()
     {
         if (!isGameClear) return;
-        if (isDisplayWinnerText) return;
 
-        SlowMotion.Play();
+        if (isDisplayWinnerText) return;
 
         // Ÿ—˜ğŒ‚ğl‚¦‚é
         // player1‚ğæ“¾‚µ‚ÄAæ“¾‚Å‚«‚½‚ç1P‚ÌŸ—˜A

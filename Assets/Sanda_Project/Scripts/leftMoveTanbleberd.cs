@@ -8,9 +8,7 @@ public class leftMoveTanbleberd : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 5f;
     private int destroyDelay = 5;
-    [SerializeField]
-    private float rotate = 1f;
-
+    private float rotateZ = 5f;
 
     private void Start()
     {
@@ -19,8 +17,8 @@ public class leftMoveTanbleberd : MonoBehaviour
 
     void Update()
     {
-        transform.position -= new Vector3(0.05f, 0, 0);
-        transform.Rotate(new Vector3(0, 0, rotate));
+        transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        transform.Rotate(new Vector3(0, 0, rotateZ) * Time.deltaTime);
     }
 
     IEnumerator DestroyAfterDelay()
