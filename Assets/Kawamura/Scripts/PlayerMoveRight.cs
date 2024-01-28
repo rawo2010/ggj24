@@ -38,9 +38,9 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
     [SerializeField] float hingeSpeed;
     [SerializeField] GameClear gameClear;
 
-    [SerializeField] AudioSource moveAudioSource;
+    //[SerializeField] AudioSource moveAudioSource;
     [SerializeField] AudioSource hitAudioSource;
-    [SerializeField] AudioClip moveSE;
+    //[SerializeField] AudioClip moveSE;
     [SerializeField] AudioClip hitSE;
 
     [SerializeField]bool isDistance;  //ãóó£ÇÇ∆Ç¡ÇΩÇ©ÅH

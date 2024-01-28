@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameClear : MonoBehaviour
 {
@@ -45,6 +46,8 @@ public class GameClear : MonoBehaviour
         gameClearText.text = winnerName + "‚ÌŸ—˜!!";
 
         isDisplayWinnerText = true;  //Ÿ—˜ÒŒˆ’è
+
+        StartCoroutine(GameTitle());
     }
 
     public void setIsGameClear(bool _isGameClear)
@@ -67,4 +70,12 @@ public class GameClear : MonoBehaviour
         Debug.Log("winnerNameƒZƒbƒg");
         winnerName = _winnerName;
     }
+
+    private IEnumerator GameTitle()
+    {
+        yield return new WaitForSeconds(2f);
+
+        SceneManager.LoadScene("TitleScene");
+    }
+
 }
