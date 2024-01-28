@@ -31,7 +31,7 @@ public class InGame : MonoBehaviour
         }
         else
         {
-            gameStartText.color = new Color(0, 0, 0, alpha);
+            // gameStartText.color = new Color(0, 0, 0, alpha);
             alpha -= Time.deltaTime / 2;
             isPlayerOperation = false;
         }

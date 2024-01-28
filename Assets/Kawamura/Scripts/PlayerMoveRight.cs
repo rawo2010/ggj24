@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMoveRight : MonoBehaviour
+public class PlayerMoveRight : MonoBehaviour, IDistancable
 {
     //è„îºêg
     [SerializeField] HingeJoint2D armRight;
@@ -307,5 +307,10 @@ public class PlayerMoveRight : MonoBehaviour
                 transform.parent.Bomb();
             }
         }
+    }
+
+    bool IDistancable.GetIsDistance()
+    {
+        return isDistance;
     }
 }

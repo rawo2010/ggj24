@@ -872,7 +872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6582853290496811572}
-  - component: {fileID: 9136544139956524182}
+  - component: {fileID: 9045786960642685388}
   - component: {fileID: 7849455022882296106}
   - component: {fileID: 7860055517405729353}
   - component: {fileID: 3307129158704677100}
@@ -910,7 +910,7 @@ Transform:
   - {fileID: 5943109921754513856}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9136544139956524182
+--- !u!114 &9045786960642685388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -919,17 +919,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 4602320084479869346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0890a2a398a7f124a89fdb95bf2221e2, type: 3}
+  m_Script: {fileID: 11500000, guid: ba60fe6d225b4bc40a3d7a41a66b5c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 1079173767725623593}
   playerSystem: {fileID: 7860055517405729353}
   gameClear: {fileID: 0}
+  InGame: {fileID: 0}
   gun: {fileID: 5005187161487659279}
   readyGun: {fileID: 837074841890144834}
   bullet: {fileID: 5319407608513252909, guid: b9df42911962db548a37f4c9f866b607, type: 3}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 3307129158704677100}
   shotSE: {fileID: 0}
+  ShotKey: 107
 --- !u!58 &7849455022882296106
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2722,6 +2723,11 @@ MonoBehaviour:
   legLeft: {fileID: 7045032968387892315}
   hingeSpeed: 300
   gameClear: {fileID: 0}
+  moveAudioSource: {fileID: 0}
+  hitAudioSource: {fileID: 0}
+  moveSE: {fileID: 0}
+  hitSE: {fileID: 0}
+  isDistance: 0
 --- !u!82 &7398267562808770770
 AudioSource:
   m_ObjectHideFlags: 0

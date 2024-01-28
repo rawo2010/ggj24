@@ -8,6 +8,7 @@ public class PlayerManagerRight : MonoBehaviour
 
     [SerializeField] PlayerSystem playerSystem;
     [SerializeField] GameClear gameClear;
+    [SerializeField] InGame InGame;
 
     [SerializeField] GameObject gun;
     [SerializeField] GameObject readyGun;

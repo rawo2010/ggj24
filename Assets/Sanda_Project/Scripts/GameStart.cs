@@ -38,7 +38,6 @@ public class GameStart : MonoBehaviour
     [SerializeField]
     private GameObject credit_Button;
 
-
     private KanbanRotate play_kanban_rotate; // ‰ñ“]½¸ØÌßÄ
     private KanbanRotate expl_kanban_rotate;
     private KanbanRotate credit_kanban_rotate;
