@@ -113,9 +113,7 @@ public class PlayerManager : MonoBehaviour
                     var script = go.GetComponent<GunMove>();
                     script.SetOwner = OnwerName;
 
-                    var vel = IsRightPlayer ? Vector2.right : Vector2.left;
-
-                    script.SetVelocty(vel);
+                    script.SetVelocty(Quaternion.Euler(0, 0, r.z) * Vector2.right);
 
                     isShot = false;
                     audioSource.PlayOneShot(shotSE);  //Œø‰Ê‰¹
