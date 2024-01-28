@@ -40,7 +40,6 @@ public class GunMove : MonoBehaviour
         //    transform.forward.z,
         //    transform.forward.x);
         rb.velocity = transform.right * speed;
-        Debug.Log(transform.forward);
         //rb.velocity = direction * speed;
     }
 

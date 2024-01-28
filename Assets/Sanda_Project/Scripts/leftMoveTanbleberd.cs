@@ -19,7 +19,7 @@ public class leftMoveTanbleberd : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        transform.position -= new Vector3(0.05f, 0, 0);
         transform.Rotate(new Vector3(0, 0, rotate));
     }
 

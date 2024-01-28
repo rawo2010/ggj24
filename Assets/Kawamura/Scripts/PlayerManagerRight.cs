@@ -44,12 +44,15 @@ public class PlayerManagerRight : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.S))
             {
-                Vector3 euler = new Vector3(
-                    0.0f,
-                    0.0f,
-                    gun.transform.localEulerAngles.z - 20.0f);
-                var go = Instantiate(bullet, gun.transform.position, Quaternion.Euler(euler));
+                var go = Instantiate(bullet);
 
+                var t = go.transform;
+                
+                var le = gun.transform.rotation;
+                le.z = -27.0f;
+                
+                t.position = gun.transform.position;
+                t.rotation = le;
 
                 //var go = Instantiate(bullet, gun.transform.position, Quaternion.identity);
                 //var go = Instantiate(bullet, gun.transform.position, gun.transform.rotation);
