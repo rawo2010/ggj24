@@ -67,9 +67,6 @@ public class PlayerMoveRight : MonoBehaviour
         //footLeft.useMotor = false;
 
         isDistance = false;
-
-        // for debug.
-        isDistance = true;
     }
 
     // Start is called before the first frame update
@@ -305,6 +302,9 @@ public class PlayerMoveRight : MonoBehaviour
                 hitAudioSource.PlayOneShot(hitSE);
                 Destroy(collision.gameObject);
                 Debug.Log("ìñÇΩÇ¡ÇΩ(2PÇÃèüóò)");
+
+                // îöî≠.
+                transform.parent.Bomb();
             }
         }
     }

@@ -302,6 +302,9 @@ public class PlayerMoveLeft : MonoBehaviour
                 hitAudioSource.PlayOneShot(hitSE);
                 Destroy(collision.gameObject);
                 Debug.Log("“–‚½‚Á‚½(1P‚ÌŸ—˜)");
+
+                // ”š”­.
+                transform.parent.Bomb();
             }
         }
     }
