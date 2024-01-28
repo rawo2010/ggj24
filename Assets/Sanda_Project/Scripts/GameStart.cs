@@ -38,6 +38,13 @@ public class GameStart : MonoBehaviour
     [SerializeField]
     private GameObject credit_Button;
 
+    [SerializeField] AudioSource audioSourceSE;
+    [SerializeField] AudioSource audioSourceBGM;
+    [SerializeField] AudioSource audioSourceButton;
+    [SerializeField] AudioClip titleBGM;
+    [SerializeField] AudioClip shotSE;
+    [SerializeField] AudioClip buttonSE;
+
 
     private KanbanRotate play_kanban_rotate; // 回転ｽｸﾘﾌﾟﾄ
     private KanbanRotate expl_kanban_rotate;
@@ -54,6 +61,8 @@ public class GameStart : MonoBehaviour
         play_kanban_rotate = play_kanban_ana.GetComponent<KanbanRotate>();
         expl_kanban_rotate = expl_kanban_ana.GetComponent<KanbanRotate>();
         credit_kanban_rotate = credit_kanban_ana.GetComponent<KanbanRotate>();
+
+        audioSourceBGM.Play();
     }
 
     private IEnumerator GameBegin()
@@ -135,6 +144,8 @@ public class GameStart : MonoBehaviour
                     if (Input.GetMouseButtonDown(0))
                     {
                         isplay = true;
+                        audioSourceSE.PlayOneShot(shotSE);
+
                         play_kanban.SetActive(false);
                         play_kanban_ana.SetActive(true);
                         play_kanban_rotate.RatateStart();
@@ -149,6 +160,8 @@ public class GameStart : MonoBehaviour
                     if (Input.GetMouseButtonDown(0))
                     {
                         isexpl = true;
+                        audioSourceSE.PlayOneShot(shotSE);
+
                         expl_kanban.SetActive(false);
                         expl_kanban_ana.SetActive(true);
                         expl_kanban_rotate.RatateStart();
@@ -163,6 +176,8 @@ public class GameStart : MonoBehaviour
                     if (Input.GetMouseButtonDown(0))
                     {
                         iscredit = true;
+                        audioSourceSE.PlayOneShot(shotSE);
+
                         credit_kanban.SetActive(false);
                         credit_kanban_ana.SetActive(true);
                         credit_kanban_rotate.RatateStart();
@@ -182,6 +197,8 @@ public class GameStart : MonoBehaviour
         play_kanban.SetActive(true);
         expl_kanban.SetActive(true);
         credit_kanban.SetActive(true);
+
+        audioSourceButton.PlayOneShot(buttonSE);
     }
 
     // クレジットからタイトルへ
@@ -193,5 +210,7 @@ public class GameStart : MonoBehaviour
         play_kanban.SetActive(true);
         expl_kanban.SetActive(true);
         credit_kanban.SetActive(true);
+
+        audioSourceButton.PlayOneShot(buttonSE);
     }
 }

@@ -659,9 +659,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 640962184, guid: ec5f85b61940b454a8847c4a7b15061a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377085351, guid: ec5f85b61940b454a8847c4a7b15061a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1262351570019558974, guid: ec5f85b61940b454a8847c4a7b15061a, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840647189878082879, guid: ec5f85b61940b454a8847c4a7b15061a, type: 3}
+      propertyPath: titleBGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 920ff5aa7b2b74d44bf32e74ffa50d1d, type: 3}
+    - target: {fileID: 6925229688239613888, guid: ec5f85b61940b454a8847c4a7b15061a, type: 3}
+      propertyPath: m_Pitch
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925229688239613888, guid: ec5f85b61940b454a8847c4a7b15061a, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7819203941743141622, guid: ec5f85b61940b454a8847c4a7b15061a, type: 3}
       propertyPath: m_Camera

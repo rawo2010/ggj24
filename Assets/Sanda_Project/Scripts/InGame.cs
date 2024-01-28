@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class InGame : MonoBehaviour
@@ -9,6 +10,13 @@ public class InGame : MonoBehaviour
     private string sceneName; // タイトル画面のシーン
     [SerializeField]
     private GameObject menuDisplay;
+    [SerializeField] 
+    private Text gameStartText;
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip buttonSE;
+
+    private float alpha = 1f;
 
     private void Update()
     {
@@ -17,18 +25,24 @@ public class InGame : MonoBehaviour
             menuDisplay.SetActive(true);
             Time.timeScale = 0f; // ゲーム内時間停止
         }
+        if (alpha < 0f) return;
+        gameStartText.color = new Color(0, 0, 0, alpha);
+        alpha -= Time.deltaTime / 2;
     }
 
     public void backGame()
     {
         menuDisplay.SetActive(false);
         Time.timeScale = 1f; // 再開
+
+        audioSource.PlayOneShot(buttonSE);
     }
 
     // メニューの機能タイトルへ戻る
     // MenuDisplayのtitleを
     public void ToMenu()
     {
+        audioSource.PlayOneShot(buttonSE);
         SceneManager.LoadScene(sceneName);
     }
 
