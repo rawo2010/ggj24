@@ -32,6 +32,8 @@ public class PlayerManagerRight : MonoBehaviour
         //isChangeGun = false;
         isShot = false;
         isSetIsDistance = false;
+
+        this.Pause();
     }
 
     // Update is called once per frame
@@ -40,6 +42,11 @@ public class PlayerManagerRight : MonoBehaviour
         if (gameClear.getIsGameClear())
         {
             return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            this.Resume();
         }
 
         //’e”­ŽË

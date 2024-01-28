@@ -2,6 +2,22 @@
 
 public static class ComponentExtensitons
 {
+    public static void Pause(this Component component)
+    {
+        foreach (var t in component.GetComponentsInChildren<Rigidbody2D>())
+        {
+            t.bodyType = RigidbodyType2D.Static;
+        }
+    }
+
+    public static void Resume(this Component component, RigidbodyType2D type2D = RigidbodyType2D.Dynamic)
+    {
+        foreach (var t in component.GetComponentsInChildren<Rigidbody2D>())
+        {
+            t.bodyType = type2D;
+        }
+    }
+
     public static void Bomb(this Component component)
     {
         var joints = component.GetComponentsInChildren<HingeJoint2D>();
