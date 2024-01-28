@@ -14,7 +14,7 @@ public class timer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!gameClear.getIsGameClear())
+        if(!gameClear.getIsGameClear())
         {
             countUp += Time.deltaTime;
             timeText.text = countUp.ToString("f2") + "•b";

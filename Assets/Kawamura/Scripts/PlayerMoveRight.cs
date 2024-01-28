@@ -43,7 +43,7 @@ public class PlayerMoveRight : MonoBehaviour
     [SerializeField] AudioClip moveSE;
     [SerializeField] AudioClip hitSE;
 
-    bool isDistance;  //‹——£‚ğ‚Æ‚Á‚½‚©H
+    [SerializeField]bool isDistance;  //‹——£‚ğ‚Æ‚Á‚½‚©H
 
     public bool GetIsDistance
     {
@@ -302,6 +302,9 @@ public class PlayerMoveRight : MonoBehaviour
                 hitAudioSource.PlayOneShot(hitSE);
                 Destroy(collision.gameObject);
                 Debug.Log("“–‚½‚Á‚½(2P‚ÌŸ—˜)");
+
+                // ”š”­.
+                transform.parent.Bomb();
             }
         }
     }

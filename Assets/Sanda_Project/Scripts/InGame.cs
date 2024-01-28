@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class InGame : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class InGame : MonoBehaviour
     [SerializeField] AudioClip buttonSE;
 
     private float alpha = 1f;
+    private bool isPlayerOperation;
+
 
     private void Update()
     {
@@ -25,9 +28,17 @@ public class InGame : MonoBehaviour
             menuDisplay.SetActive(true);
             Time.timeScale = 0f; // ÉQÅ[ÉÄì‡éûä‘í‚é~
         }
-        if (alpha < 0f) return;
-        gameStartText.color = new Color(0, 0, 0, alpha);
-        alpha -= Time.deltaTime / 2;
+
+        if (alpha < 0f)
+        {
+            isPlayerOperation = true;
+        }
+        else
+        {
+            gameStartText.color = new Color(0, 0, 0, alpha);
+            alpha -= Time.deltaTime / 2;
+            isPlayerOperation = false;
+        }
     }
 
     public void backGame()
@@ -46,4 +57,8 @@ public class InGame : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public bool getPlayerOperation()
+    {
+        return isPlayerOperation;
+    }
 }

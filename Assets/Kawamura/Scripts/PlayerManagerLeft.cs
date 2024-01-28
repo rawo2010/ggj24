@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerManagerLeft : MonoBehaviour
@@ -19,6 +20,9 @@ public class PlayerManagerLeft : MonoBehaviour
     //bool isChangeGun;
     bool isShot;
     bool isSetIsDistance;
+
+    private float reloadtingTime = 0.0f;
+    private const float INTERVAL = 0.8f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,20 +46,32 @@ public class PlayerManagerLeft : MonoBehaviour
         //’e”­ŽË
         if (!isShot && body.GetIsDistance == true)
         {
+            reloadtingTime = Mathf.Clamp(
+                reloadtingTime + Time.deltaTime, 0, INTERVAL);
+            if (reloadtingTime < INTERVAL)
+            {
+                return;
+            }
+
             if (Input.GetKeyDown(KeyCode.K))
             {
-                Vector3 euler = new Vector3(
-                    0.0f,
-                    180.0f,
-                    gun.transform.localEulerAngles.z + 10.0f);
-                //var go = Instantiate(bullet, gun.transform.position, Quaternion.Euler(0.0f, 180.0f, 0.0f));
-                //var go = Instantiate(bullet, gun.transform.position, gun.transform.rotation);
-                var go = Instantiate(bullet, gun.transform.position, Quaternion.Euler(euler));
+                var go = Instantiate(bullet);
+
+                var t = go.transform;
+
+                var r = gun.transform.rotation.eulerAngles;
+                r.z -= 27.0f;
+
+                t.position = gun.transform.position;
+                t.localEulerAngles = r;
+
                 var script = go.GetComponent<GunMove>();
                 script.SetOwner = "LeftPlayer";
                 isShot = false;
                 audioSource.PlayOneShot(shotSE);  //Œø‰Ê‰¹
                 Debug.Log("’e”­ŽË");
+
+                reloadtingTime = 0.0f;
             }
         }
 

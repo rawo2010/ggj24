@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class rightMovetanbleberd : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class rightMovetanbleberd : MonoBehaviour
     private float moveSpeed = 5f;
     private int destroyDelay = 5;
     [SerializeField]
-    private float rotate= 1f;
+    private float rotatespeed = 0.05f;
 
     private void Start()
     {
@@ -18,8 +17,9 @@ public class rightMovetanbleberd : MonoBehaviour
 
     void Update()
     {
-        transform.position += new Vector3(0.05f, 0, 0);
-        transform.Rotate(new Vector3(0, 0, rotate));
+        transform.position += new Vector3(rotatespeed, 0, 0);
+
+        transform.Rotate(new Vector3(0, 0, -1));
     }
 
     IEnumerator DestroyAfterDelay()

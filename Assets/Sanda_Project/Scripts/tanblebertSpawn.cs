@@ -37,12 +37,12 @@ public class tanblebertSpawn : MonoBehaviour
         // 左からリスポーン
         if(randomDir == 0)
         {
-            Instantiate(leftTanblebert, new Vector3(12, -2.97f, 0), Quaternion.identity);
+            Instantiate(leftTanblebert, new Vector3(12, 0, 0), Quaternion.identity);
         }
         else
         {
             //右からリスポーン
-            Instantiate(rightTanblebert, new Vector3(-12, -2.97f, 0), Quaternion.identity);
+            Instantiate(rightTanblebert, new Vector3(-12, 0, 0), Quaternion.identity);
         }
 
         randomInt = Random.Range(10, 15);
