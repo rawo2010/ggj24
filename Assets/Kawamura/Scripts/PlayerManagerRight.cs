@@ -20,6 +20,9 @@ public class PlayerManagerRight : MonoBehaviour
     bool isShot;
     bool isSetIsDistance;
 
+    private float reloadtingTime = 0.0f;
+    private const float INTERVAL = 0.8f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,25 +45,32 @@ public class PlayerManagerRight : MonoBehaviour
         //’e”­ŽË
         if (!isShot && body.GetIsDistance == true)
         {
+            reloadtingTime = Mathf.Clamp(
+                reloadtingTime + Time.deltaTime, 0, INTERVAL);
+            if (reloadtingTime < INTERVAL)
+            {
+                return;
+            }
+
             if (Input.GetKeyDown(KeyCode.S))
             {
                 var go = Instantiate(bullet);
 
                 var t = go.transform;
                 
-                var le = gun.transform.rotation;
-                le.z = -27.0f;
+                var r = gun.transform.rotation.eulerAngles;
+                r.z -= 27.0f;
                 
                 t.position = gun.transform.position;
-                t.rotation = le;
+                t.localEulerAngles = r;
 
-                //var go = Instantiate(bullet, gun.transform.position, Quaternion.identity);
-                //var go = Instantiate(bullet, gun.transform.position, gun.transform.rotation);
                 var script = go.GetComponent<GunMove>();
                 script.SetOwner = "RightPlayer";
                 isShot = false;
                 audioSource.PlayOneShot(shotSE);  //Œø‰Ê‰¹
-                Debug.Log("’e”­ŽË");
+                Debug.Log("’e”­ŽË" + r);
+
+                reloadtingTime = 0.0f;  
             }
         }
 

@@ -43,7 +43,7 @@ public class PlayerMoveRight : MonoBehaviour
     [SerializeField] AudioClip moveSE;
     [SerializeField] AudioClip hitSE;
 
-    bool isDistance;  //ãóó£ÇÇ∆Ç¡ÇΩÇ©ÅH
+    [SerializeField]bool isDistance;  //ãóó£ÇÇ∆Ç¡ÇΩÇ©ÅH
 
     public bool GetIsDistance
     {
@@ -67,6 +67,9 @@ public class PlayerMoveRight : MonoBehaviour
         //footLeft.useMotor = false;
 
         isDistance = false;
+
+        // for debug.
+        isDistance = true;
     }
 
     // Start is called before the first frame update
