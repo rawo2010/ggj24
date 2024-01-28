@@ -1149,14 +1149,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba60fe6d225b4bc40a3d7a41a66b5c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 5310883442167964082}
   playerSystem: {fileID: 8387252035493530504}
   gameClear: {fileID: 0}
+  InGame: {fileID: 0}
   gun: {fileID: 5059428494172716119}
   readyGun: {fileID: 9210626101007994121}
   bullet: {fileID: 5319407608513252909, guid: b9df42911962db548a37f4c9f866b607, type: 3}
-  audioSource: {fileID: 0}
-  shotSE: {fileID: 0}
+  audioSource: {fileID: -5004042061839657273}
+  shotSE: {fileID: 8300000, guid: 67a8c986b520cf1499bb4a9ea1d1a724, type: 3}
+  IsRightPlayer: 0
 --- !u!58 &3828793445670934305
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1208,8 +1209,6 @@ MonoBehaviour:
   firstInstruction: "3\u6B69\u5206\u9032\u3081!!"
   SecondInstruction: 
   thirdInstruction: "\u76F8\u624B\u306B\u5411\u304B\u3063\u3066\u6483\u3066!!"
-  audioSource: {fileID: 0}
-  instructionSE: {fileID: 0}
 --- !u!82 &-5004042061839657273
 AudioSource:
   m_ObjectHideFlags: 0

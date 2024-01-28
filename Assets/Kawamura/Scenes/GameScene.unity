@@ -9947,6 +9947,14 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.x
       value: 1.721189
       objectReference: {fileID: 0}
+    - target: {fileID: 9045786960642685388, guid: bb4007b8a6e8c7f458b783a5a9cfcfcd, type: 3}
+      propertyPath: InGame
+      value: 
+      objectReference: {fileID: 6982068201030584654}
+    - target: {fileID: 9045786960642685388, guid: bb4007b8a6e8c7f458b783a5a9cfcfcd, type: 3}
+      propertyPath: gameClear
+      value: 
+      objectReference: {fileID: 4629731341699039551}
     - target: {fileID: 9136544139956524182, guid: bb4007b8a6e8c7f458b783a5a9cfcfcd, type: 3}
       propertyPath: shotSE
       value: 
@@ -12463,7 +12471,6 @@ GameObject:
   - component: {fileID: 3801727191376012038}
   - component: {fileID: 4629731341699039551}
   - component: {fileID: 6982068201030584654}
-  - component: {fileID: 6982068201030584655}
   - component: {fileID: 6982068201030584656}
   m_Layer: 5
   m_Name: Canvas
@@ -12487,22 +12494,8 @@ MonoBehaviour:
   sceneName: TitleScene
   menuDisplay: {fileID: 1212971580}
   gameStartText: {fileID: 1719501626}
-  audioSource: {fileID: 6982068201030584656}
-  buttonSE: {fileID: 8300000, guid: ba98f9a3ee63b9847b4f840b2e613dd5, type: 3}
---- !u!114 &6982068201030584655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6982068201030584653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6aef9ae61352d14395fbea4a3ba1ed2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeText: {fileID: 712895000}
-  gameClear: {fileID: 4629731341699039551}
+  audioSource: {fileID: 0}
+  buttonSE: {fileID: 0}
 --- !u!82 &6982068201030584656
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12620,17 +12613,13 @@ PrefabInstance:
       value: gumman_2p_left
       objectReference: {fileID: 0}
     - target: {fileID: 2801718377251356514, guid: 00285e495326fed43bda0a1b22b83819, type: 3}
-      propertyPath: shotSE
+      propertyPath: InGame
       value: 
-      objectReference: {fileID: 8300000, guid: 67a8c986b520cf1499bb4a9ea1d1a724, type: 3}
+      objectReference: {fileID: 6982068201030584654}
     - target: {fileID: 2801718377251356514, guid: 00285e495326fed43bda0a1b22b83819, type: 3}
       propertyPath: gameClear
       value: 
       objectReference: {fileID: 4629731341699039551}
-    - target: {fileID: 2801718377251356514, guid: 00285e495326fed43bda0a1b22b83819, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 7082287387294954194}
     - target: {fileID: 4801706416461176453, guid: 00285e495326fed43bda0a1b22b83819, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -12716,11 +12705,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00285e495326fed43bda0a1b22b83819, type: 3}
---- !u!82 &7082287387294954194 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: -5004042061839657273, guid: 00285e495326fed43bda0a1b22b83819, type: 3}
-  m_PrefabInstance: {fileID: 7082287387294954193}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7117921961788896870
 GameObject:
   m_ObjectHideFlags: 0

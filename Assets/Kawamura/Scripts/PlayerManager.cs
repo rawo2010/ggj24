@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private bool IsRightPlayer = true;
 
-    KeyCode ShotKey => IsRightPlayer ?  KeyCode.S : KeyCode.J;
+    KeyCode ShotKey => IsRightPlayer ?  KeyCode.S : KeyCode.K;
 
     string OnwerName => IsRightPlayer ? "RightPlayer" : "LeftPlayer";
 
@@ -34,6 +34,11 @@ public class PlayerManager : MonoBehaviour
 
     private float reloadtingTime = 0.0f;
     private const float INTERVAL = 0.8f;
+
+    private void Awake()
+    {
+        this.Pause();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +65,9 @@ public class PlayerManager : MonoBehaviour
     private IEnumerator WaitGameStart()
     {
         yield return new WaitUntil(() => InGame.getPlayerOperation());
+
+        this.Resume();
+
         yield return MainLoop();
     }
 
