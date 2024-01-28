@@ -26,8 +26,6 @@ public class PlayerManager : MonoBehaviour
 
     private IDistancable Distancable;
 
-
-
     //bool isChangeGun;
     bool isShot;
     bool isSetIsDistance;
@@ -99,13 +97,26 @@ public class PlayerManager : MonoBehaviour
                     var t = go.transform;
 
                     var r = gun.transform.rotation.eulerAngles;
-                    r.z -= 27.0f;
+
+                    if (IsRightPlayer)
+                    {
+                        r.z -= 27.0f;
+                    }
+                    else
+                    {
+                        r.z += 27.0f + 180.0f;
+                    }
 
                     t.position = gun.transform.position;
                     t.localEulerAngles = r;
 
                     var script = go.GetComponent<GunMove>();
                     script.SetOwner = OnwerName;
+
+                    var vel = IsRightPlayer ? Vector2.right : Vector2.left;
+
+                    script.SetVelocty(vel);
+
                     isShot = false;
                     audioSource.PlayOneShot(shotSE);  //Œø‰Ê‰¹
                     Debug.Log("’e”­ŽË");
