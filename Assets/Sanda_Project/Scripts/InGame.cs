@@ -11,8 +11,12 @@ public class InGame : MonoBehaviour
     private string sceneName; // タイトル画面のシーン
     [SerializeField]
     private GameObject menuDisplay;
-    [SerializeField]
+    [SerializeField] 
     private Text gameStartText;
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip buttonSE;
+
     private float alpha = 1f;
     private bool isPlayerOperation;
 
@@ -41,12 +45,15 @@ public class InGame : MonoBehaviour
     {
         menuDisplay.SetActive(false);
         Time.timeScale = 1f; // 再開
+
+        audioSource.PlayOneShot(buttonSE);
     }
 
     // メニューの機能タイトルへ戻る
     // MenuDisplayのtitleを
     public void ToMenu()
     {
+        audioSource.PlayOneShot(buttonSE);
         SceneManager.LoadScene(sceneName);
     }
 

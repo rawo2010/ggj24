@@ -18,9 +18,6 @@ public class PlayerSystem : MonoBehaviour
     [SerializeField]
     private string thirdInstruction;
 
-    [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip instructionSE;
-
     private bool isDistance; // 3•à—£‚ê‚½‚©
     //private bool isGetWeapon; // •Ší‚ğŠ‚µ‚Ä‚¢‚é‚©
 
@@ -28,7 +25,6 @@ public class PlayerSystem : MonoBehaviour
     {
         //gameStart = GetComponent<GameStart>();
         instructionText.text = firstInstruction;
-        audioSource.PlayOneShot(instructionSE);
     }
 
     private void Update()
@@ -47,7 +43,6 @@ public class PlayerSystem : MonoBehaviour
         if (isDistance)
         {
             instructionText.text = thirdInstruction;
-            audioSource.PlayOneShot(instructionSE);
         }
 
         //// ó‹µ‚É‰‚¶‚Ä•\¦•¶š‚ğ•Ï‚¦‚é

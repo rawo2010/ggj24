@@ -17,7 +17,6 @@ public class rightMovetanbleberd : MonoBehaviour
 
     void Update()
     {
-        //transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
         transform.position += new Vector3(rotatespeed, 0, 0);
 
         transform.Rotate(new Vector3(0, 0, -1));
