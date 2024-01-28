@@ -11,9 +11,8 @@ public class GameClear : MonoBehaviour
     [SerializeField] Text player2_text;
     [SerializeField] Text p1;
     [SerializeField] Text p2;
-    [SerializeField]
-    private string winnerName;
-
+    [SerializeField] private string winnerName;
+ 
     private bool isGameClear;
 
     private bool isDisplayWinnerText;
@@ -32,6 +31,9 @@ public class GameClear : MonoBehaviour
         if (!isGameClear) return;
 
         if (isDisplayWinnerText) return;
+
+        var slowMotion = FindFirstObjectByType<SlowMotion>();
+        slowMotion?.Play();
 
         // Ÿ—˜ğŒ‚ğl‚¦‚é
         // player1‚ğæ“¾‚µ‚ÄAæ“¾‚Å‚«‚½‚ç1P‚ÌŸ—˜A
