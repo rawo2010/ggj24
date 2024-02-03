@@ -29,12 +29,6 @@ public class PlayerSystem : MonoBehaviour
 
     private void Update()
     {
-        //エスケープキーでタイトルシーンに戻る
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("TitleScene");
-        }
-
         // 状況に応じて表示文字を変える
         //if (isGetWeapon)
         //{
