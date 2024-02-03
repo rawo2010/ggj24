@@ -26,7 +26,6 @@ public class PlayerManager : MonoBehaviour
 
     private IDistancable Distancable;
 
-    //bool isChangeGun;
     bool isShot;
     bool isSetIsDistance;
 
@@ -41,10 +40,6 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gun.SetActive(false);
-        //readyGun.SetActive(true);
-
-        //isChangeGun = false;
         isShot = false;
         isSetIsDistance = false;
 
@@ -129,30 +124,6 @@ public class PlayerManager : MonoBehaviour
                 playerSystem.SetIsDistance(GetIsDistance());
                 isSetIsDistance = true;
             }
-
-            ////èeÇÃì¸ÇÍë÷Ç¶
-            //if (!isChangeGun && body.GetIsGetGun == true)
-            //{
-            //    gun.SetActive(true);
-            //    readyGun.SetActive(false);
-
-            //    isChangeGun = true;
-            //}
         }
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if(collision.gameObject.tag == "bullet")
-    //    {
-    //        var script = collision.gameObject.GetComponent<GunMove>();
-    //        if (script.GetOwner == "RightPlayer")
-    //        {
-    //            gameClear.setWinnerName("1P");
-    //            gameClear.setIsGameClear(true);
-    //            Destroy(collision.gameObject);
-    //            Debug.Log("ìñÇΩÇ¡ÇΩ(1PÇÃèüóò)");
-    //        }
-    //    }
-    //}
 }

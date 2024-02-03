@@ -7,12 +7,8 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
     //è„îºêg
     [SerializeField] HingeJoint2D armRight;
     [SerializeField] HingeJoint2D armLeft;
-    //[SerializeField] HingeJoint2D handRight;
-    //[SerializeField] HingeJoint2D handLeft;
     private JointMotor2D armRightMotor;
     private JointMotor2D armLeftMotor;
-    //private JointMotor2D handRightMotor;
-    //private JointMotor2D handLeftMotor;
 
     //Gun
     [SerializeField] HingeJoint2D gun;
@@ -21,26 +17,14 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
     //â∫îºêg
     [SerializeField] HingeJoint2D legRight;
     [SerializeField] HingeJoint2D legLeft;
-    //[SerializeField] HingeJoint2D footRight;
-    //[SerializeField] HingeJoint2D footLeft;
     private JointMotor2D legRightMotor;
     private JointMotor2D legLeftMotor;
-    //private JointMotor2D footRightMotor;
-    //private JointMotor2D footLeftMotor;
 
-
-
-    //[SerializeField] private Rigidbody2D legRightRb;
-    //[SerializeField] private Rigidbody2D legLeftRb;
-    //[SerializeField] private Rigidbody2D footRightRb;
-    //[SerializeField] private Rigidbody2D footLeftRb;
 
     [SerializeField] float hingeSpeed;
     [SerializeField] GameClear gameClear;
 
-    //[SerializeField] AudioSource moveAudioSource;
     [SerializeField] AudioSource hitAudioSource;
-    //[SerializeField] AudioClip moveSE;
     [SerializeField] AudioClip hitSE;
 
     [SerializeField]bool isDistance;  //ãóó£ÇÇ∆Ç¡ÇΩÇ©ÅH
@@ -54,8 +38,6 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
         //è„îºêg
         armRight.useMotor = false;
         armLeft.useMotor = false;
-        //handRight.useMotor = false;
-        //handLeft.useMotor = false;
 
         //Gun
         gun.useMotor = false;
@@ -63,8 +45,6 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
         //â∫îºêg
         legRight.useMotor = false;
         legLeft.useMotor = false;
-        //footRight.useMotor = false;
-        //footLeft.useMotor = false;
 
         isDistance = false;
     }
@@ -72,13 +52,9 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
     // Start is called before the first frame update
     void Start()
     {
-        //ÉNÉäÉAÇµÇΩÇÁëÄçÏÇéÛÇØïtÇØÇ»Ç¢
-
         //è„îºêg
         armRightMotor = armRight.motor;
         armLeftMotor = armLeft.motor;
-        //handRightMotor = handRight.motor;
-        //handLeftMotor = handLeft.motor;
 
         //Gun
         gunMotor = gun.motor;
@@ -86,11 +62,6 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
         //â∫îºêg
         legRightMotor = legRight.motor;
         legLeftMotor = legLeft.motor;
-        //footRightMotor = footRight.motor;
-        //footLeftMotor = footLeft.motor;
-
-        //footRightRb.simulated = false;
-        //footLeftRb.simulated = false;
     }
 
     // Update is called once per frame
@@ -101,17 +72,9 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
             return;
         }
 
-        //ShiftÇ≈ãtâÒì]
-        //if (Input.GetKey(KeyCode.LeftShift))
-        //{
-        //    hingeSpeed *= -1.0f;
-        //}
-
         //ç∂ãr
         if (Input.GetKey(KeyCode.D))
         {
-            //footLeft.useMotor = false;
-
             legLeft.useMotor = true;
             legLeftMotor.motorSpeed = hingeSpeed;
             legLeft.motor = legLeftMotor;
@@ -120,20 +83,10 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
         {
             legLeft.useMotor = false;
         }
-        //else if(Input.GetKeyUp(KeyCode.D))
-        //{
-        //    legLeft.useMotor = false;
-
-        //    footLeft.useMotor = true;
-        //    footLeftMotor.motorSpeed = hingeSpeed * 100.0f;
-        //    footLeft.motor = footLeftMotor;
-        //}
 
         //âEãr
         if (Input.GetKey(KeyCode.A))
         {
-            //footRight.useMotor = false;
-
             legRight.useMotor = true;
             legRightMotor.motorSpeed = -hingeSpeed;
             legRight.motor = legRightMotor;
@@ -142,23 +95,12 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
         {
             legRight.useMotor = false;
         }
-        //else if(Input.GetKey(KeyCode.A))
-        //{
-        //    legRight.useMotor = false;
-
-        //    footRight.useMotor = true;
-        //    footRightMotor.motorSpeed = hingeSpeed * 100.0f;
-        //    footRight.motor = footRightMotor;
-        //}
 
         //ç∂òr
         if (Input.GetKey(KeyCode.E))
         {
             armLeft.useMotor = true;
-
             armLeftMotor.motorSpeed = -hingeSpeed;
-            //armLeftMotor.motorSpeed = hingeSpeed;
-
             armLeft.motor = armLeftMotor;
         }
         else
@@ -170,10 +112,7 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
         if (Input.GetKey(KeyCode.Q))
         {
             armRight.useMotor = true;
-
             armRightMotor.motorSpeed = -hingeSpeed;
-            //armRightMotor.motorSpeed = -hingeSpeed;
-
             armRight.motor = armRightMotor;
         }
         else
@@ -193,7 +132,6 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
             else
             {
                 gunMotor.motorSpeed = hingeSpeed;
-                //gunMotor.motorSpeed = hingeSpeed;
             }
 
             gun.motor = gunMotor;
@@ -202,81 +140,6 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
         {
             gun.useMotor = false;
         }
-
-
-        //å≥Ç…ñﬂÇ∑
-        //if(hingeSpeed < 0.0f)
-        //{
-        //    hingeSpeed *= -1.0f;
-        //}
-
-
-
-        ////ãr
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    legRight.useMotor = true;
-        //    legLeft.useMotor = true;
-
-        //    legRightMotor.motorSpeed = -hingeSpeed;
-        //    legLeftMotor.motorSpeed = hingeSpeed;
-
-        //    legRight.motor = legRightMotor;
-        //    legLeft.motor = legLeftMotor;
-        //}
-        //else if (Input.GetKey(KeyCode.A))
-        //{
-        //    legRight.useMotor = true;
-        //    legLeft.useMotor = true;
-
-        //    legRightMotor.motorSpeed = hingeSpeed;
-        //    legLeftMotor.motorSpeed = -hingeSpeed;
-
-        //    legRight.motor = legRightMotor;
-        //    legLeft.motor = legLeftMotor;
-        //}
-        //else
-        //{
-        //    legRight.useMotor = false;
-        //    legLeft.useMotor = false;
-
-        //    legRight.motor = new JointMotor2D { motorSpeed = 0, maxMotorTorque = 0 };
-        //    legLeft.motor = new JointMotor2D { motorSpeed = 0, maxMotorTorque = 0 };
-        //}
-
-        ////ë´
-        //if (Input.GetKey(KeyCode.C))
-        //{
-        //    footRight.useMotor = true;
-        //    footLeft.useMotor = true;
-
-        //    footRightMotor.motorSpeed = -hingeSpeed;
-        //    footLeftMotor.motorSpeed = hingeSpeed;
-
-        //    footRight.motor = footRightMotor;
-        //    footLeft.motor = footLeftMotor;
-        //}
-        //else if (Input.GetKey(KeyCode.Z))
-        //{
-        //    footRight.useMotor = true;
-        //    footLeft.useMotor = true;
-
-        //    footRightMotor.motorSpeed = hingeSpeed;
-        //    footLeftMotor.motorSpeed = -hingeSpeed;
-
-        //    footRight.motor = footRightMotor;
-        //    footLeft.motor = footLeftMotor;
-        //}
-        //else
-        //{
-        //    footRight.useMotor = false;
-        //    footLeft.useMotor = false;
-
-        //    Debug.Log("footñ≥å¯âª");
-
-        //    footRight.motor = new JointMotor2D { motorSpeed = 0, maxMotorTorque = 0 };
-        //    footLeft.motor = new JointMotor2D { motorSpeed = 0, maxMotorTorque = 0 };
-        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -289,7 +152,6 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
         if (collision.tag == "GunGetAreaRight")
         {
             isDistance = true;
-            Debug.Log("âEìñÇΩÇ¡ÇΩ");
         }
 
         if (collision.gameObject.tag == "bullet")
@@ -301,7 +163,6 @@ public class PlayerMoveRight : MonoBehaviour, IDistancable
                 gameClear.setIsGameClear(true);
                 hitAudioSource.PlayOneShot(hitSE);
                 Destroy(collision.gameObject);
-                Debug.Log("ìñÇΩÇ¡ÇΩ(2PÇÃèüóò)");
 
                 // îöî≠.
                 transform.parent.Bomb();

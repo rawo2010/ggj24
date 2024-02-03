@@ -17,7 +17,6 @@ public class PlayerManagerRight : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip shotSE;
 
-    //bool isChangeGun;
     bool isShot;
     bool isSetIsDistance;
 
@@ -27,10 +26,6 @@ public class PlayerManagerRight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gun.SetActive(false);
-        //readyGun.SetActive(true);
-
-        //isChangeGun = false;
         isShot = false;
         isSetIsDistance = false;
 
@@ -88,29 +83,5 @@ public class PlayerManagerRight : MonoBehaviour
             playerSystem.SetIsDistance(body.GetIsDistance);
             isSetIsDistance = true;
         }
-
-        ////èeÇÃì¸ÇÍë÷Ç¶
-        //if (!isChangeGun && body.GetIsGetGun == true)
-        //{
-        //    gun.SetActive(true);
-        //    readyGun.SetActive(false);
-
-        //    isChangeGun = true;
-        //}
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "bullet")
-    //    {
-    //        var script = collision.gameObject.GetComponent<GunMove>();
-    //        if (script.GetOwner == "LeftPlayer")
-    //        {
-    //            gameClear.setWinnerName("2P");
-    //            gameClear.setIsGameClear(true);
-    //            Destroy(collision.gameObject);
-    //            Debug.Log("ìñÇΩÇ¡ÇΩ(2PÇÃèüóò)");
-    //        }
-    //    }
-    //}
 }
