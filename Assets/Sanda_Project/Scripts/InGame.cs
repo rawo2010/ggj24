@@ -21,7 +21,7 @@ public class InGame : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
             menuDisplay.SetActive(true);
             Time.timeScale = 0f; // ÉQÅ[ÉÄì‡éûä‘í‚é~
